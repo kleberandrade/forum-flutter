@@ -14,7 +14,7 @@ Future<void> main() async {
   await Parse().initialize(
     AppApi.appId,
     AppApi.serverUrl,
-    clientKey: AppApi.clientId,
+    clientKey: AppApi.clientKey,
     autoSendSessionId: true,
     debug: true,
   );

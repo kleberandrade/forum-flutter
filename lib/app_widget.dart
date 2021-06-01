@@ -8,7 +8,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: kAppTheme,
-      initialRoute: '/',
+      initialRoute: '/login',
     ).modular();
   }
 }

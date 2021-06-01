@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:forum_manha/core/helpers/snackbar_helper.dart';
 import 'package:forum_manha/core/widgets/appbars/simple_appbar.dart';
 import 'package:forum_manha/core/widgets/buttons/primary_button.dart';
+import 'package:forum_manha/core/widgets/dialogs/loading_dialog.dart';
 import 'package:forum_manha/core/widgets/forms/email_input_field.dart';
 import 'package:forum_manha/core/widgets/forms/form_scaffold.dart';
 import 'package:forum_manha/core/widgets/forms/password_input_field.dart';
@@ -50,5 +52,21 @@ class _RegisterPageState
     );
   }
 
-  void _onRegister() {}
+  Future<void> _onRegister() async {
+    if (!_formKey.currentState!.validate()) return;
+    LoadingDialog.show(context, message: 'Registrando usuário');
+    _formKey.currentState!.save();
+    final result = await controller.register();
+    LoadingDialog.hide();
+    result.fold(_onFailure, _onSuccess);
+  }
+
+  void _onFailure(failure) {
+    SnackBarHelper.showFailureMessage(context, message: failure.toString());
+  }
+
+  void _onSuccess(user) {
+    Modular.to.pop();
+    SnackBarHelper.showSuccessMessage(context, message: 'Sucesso!');
+  }
 }

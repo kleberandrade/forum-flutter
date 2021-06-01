@@ -3,52 +3,42 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:forum_manha/core/helpers/snackbar_helper.dart';
 import 'package:forum_manha/core/widgets/appbars/simple_appbar.dart';
 import 'package:forum_manha/core/widgets/buttons/primary_button.dart';
-import 'package:forum_manha/core/widgets/buttons/secondary_button.dart';
 import 'package:forum_manha/core/widgets/dialogs/loading_dialog.dart';
 import 'package:forum_manha/core/widgets/forms/email_input_field.dart';
 import 'package:forum_manha/core/widgets/forms/form_scaffold.dart';
-import 'package:forum_manha/core/widgets/forms/password_input_field.dart';
-import 'package:forum_manha/modules/login/controllers/login_controller.dart';
+import 'package:forum_manha/modules/reset/controllers/reset_controller.dart';
 
-class LoginPage extends StatefulWidget {
+class ResetPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _ResetPageState createState() => _ResetPageState();
 }
 
-class _LoginPageState extends ModularState<LoginPage, LoginController> {
+class _ResetPageState extends ModularState<ResetPage, ResetController> {
   final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return FormScaffold(
+      appBar: const SimpleAppBar(title: 'Reiniciar senha'),
       formKey: _formKey,
-      appBar: const SimpleAppBar(title: 'Login'),
       children: [
         EmailInputField(
           label: 'Email',
           initialValue: controller.email,
           onSaved: controller.setEmail,
         ),
-        PasswordInputField(
-          label: 'Senha',
-          initialValue: controller.password,
-          onSaved: controller.setPassword,
-        ),
-        PrimaryButton(label: 'Entrar', onPressed: _onLogin),
-        SecondaryButton(label: 'Registrar', onPressed: _onRegister),
+        PrimaryButton(
+          label: 'Enviar email',
+          onPressed: _onPasswordReset,
+        )
       ],
     );
   }
 
-  void _onRegister() {
-    Modular.to.pushNamed('/register');
-  }
-
-  Future<void> _onLogin() async {
+  Future<void> _onPasswordReset() async {
     if (!_formKey.currentState!.validate()) return;
-    LoadingDialog.show(context, message: 'Verificando credenciais');
+    LoadingDialog.show(context, message: 'Verificando email');
     _formKey.currentState!.save();
-    final result = await controller.login();
+    final result = await controller.passwordReset();
     LoadingDialog.hide();
     result.fold(_onFailure, _onSuccess);
   }
@@ -58,6 +48,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
   }
 
   void _onSuccess(user) {
-    Modular.to.navigate('/home');
+    Modular.to.pop();
+    SnackBarHelper.showSuccessMessage(context, message: 'Sucesso!');
   }
 }

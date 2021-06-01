@@ -12,11 +12,15 @@ dependencies:
   another_flushbar: ^1.10.22
   dartz: ^0.10.0-nullsafety.1
   equatable: ^2.0.2
+  extended_image: ^4.1.0
   flutter_mobx: ^2.0.0
   flutter_modular: ^3.2.2+1
+  maps_launcher: ^2.0.0
   mobx: ^2.0.1
   parse_server_sdk_flutter: ^3.0.0
   shared_preferences: ^2.0.5
+  shimmer: ^2.0.0
+  url_launcher: ^6.0.4
   url_strategy: ^0.2.0
 
 dev_dependencies:
