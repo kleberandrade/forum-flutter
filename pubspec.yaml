@@ -15,6 +15,7 @@ dependencies:
   extended_image: ^4.1.0
   flutter_mobx: ^2.0.0
   flutter_modular: ^3.2.2+1
+  intl: ^0.17.0
   maps_launcher: ^2.0.0
   mobx: ^2.0.1
   parse_server_sdk_flutter: ^3.0.0

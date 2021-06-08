@@ -54,6 +54,13 @@ mixin _$ProfileController on _ProfileControllerBase, Store {
     });
   }
 
+  final _$logoutAsyncAction = AsyncAction('_ProfileControllerBase.logout');
+
+  @override
+  Future<dynamic> logout() {
+    return _$logoutAsyncAction.run(() => super.logout());
+  }
+
   @override
   String toString() {
     return '''

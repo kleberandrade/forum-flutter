@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:forum_manha/core/configs/app_colors.dart';
 
 class SimpleAppBar extends StatefulWidget with PreferredSizeWidget {
   final String title;
@@ -31,6 +32,8 @@ class _SimpleAppBarState extends State<SimpleAppBar> {
         widget.title.toLowerCase(),
         style: const TextStyle(color: Colors.black),
       ),
+      backgroundColor: AppColors.scaffoldColor,
+      iconTheme: const IconThemeData(color: Colors.black),
       centerTitle: true,
       actions: widget.actions,
       automaticallyImplyLeading: widget.canBack,
