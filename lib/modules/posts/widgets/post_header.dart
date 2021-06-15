@@ -21,8 +21,8 @@ class PostHeader extends StatelessWidget {
       child: Row(
         children: [
           CircleAvatarNetwork(
-            imageUrl: '',
-            initials: StringHelper.getInitials('Kleber de Oliveira Andrade'),
+            imageUrl: post.avatar ?? '',
+            initials: StringHelper.getInitials(post.name ?? ''),
             radius: 24,
           ),
           const SizedBox(width: 20),
@@ -30,7 +30,7 @@ class PostHeader extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text('Kleber de Oliveira Andrade'),
+                Text(post.name ?? ''),
                 const SizedBox(height: 4),
                 Text(DateHelper.format(post.date!)),
               ],

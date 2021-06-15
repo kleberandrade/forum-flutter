@@ -7,7 +7,12 @@ class PostModel extends Equatable {
   String description;
   String userId;
   DateTime? date;
-  int? views;
+  int? viewsAmount;
+  int? votesAmount;
+  int? commentsAmount;
+
+  String? name;
+  String? avatar;
 
   PostModel({
     this.id,
@@ -15,7 +20,11 @@ class PostModel extends Equatable {
     required this.description,
     required this.userId,
     this.date,
-    this.views,
+    this.viewsAmount,
+    this.votesAmount,
+    this.commentsAmount,
+    this.avatar,
+    this.name,
   });
 
   factory PostModel.fromMap(ParseObject map) {
@@ -25,11 +34,12 @@ class PostModel extends Equatable {
       date: map.createdAt,
       title: map.get('title'),
       description: map.get('description'),
-      views: map.get('views'),
+      viewsAmount: map.get('views'),
       userId: user.objectId!,
     );
   }
 
   @override
-  List<Object?> get props => [id, date, title, description, views, userId];
+  List<Object?> get props =>
+      [id, date, title, description, viewsAmount, userId];
 }

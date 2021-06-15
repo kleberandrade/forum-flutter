@@ -25,6 +25,8 @@ class _PostsDetailPageState
   @override
   void initState() {
     super.initState();
+    controller.setPost(widget.post);
+    controller.incrementViews();
     controller.fetchCommentsByPostId();
   }
 

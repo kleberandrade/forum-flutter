@@ -14,7 +14,7 @@ class PostsModule extends Module {
     Bind((i) => PostsRepository()),
     Bind((i) => PostsController(i())),
     Bind((i) => PostsEditorController(i())),
-    Bind((i) => PostsDetailController(i())),
+    Bind((i) => PostsDetailController(i(), i())),
   ];
 
   @override

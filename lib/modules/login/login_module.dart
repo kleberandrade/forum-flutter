@@ -8,7 +8,7 @@ class LoginModule extends Module {
   @override
   final List<Bind> binds = [
     Bind((i) => LoginRepository()),
-    Bind((i) => LoginController(i())),
+    Bind((i) => LoginController(i(), i())),
   ];
 
   @override
