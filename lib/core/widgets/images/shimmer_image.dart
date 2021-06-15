@@ -1,7 +1,8 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:forum_manha/core/configs/app_colors.dart';
 import 'package:shimmer/shimmer.dart';
+
+import '../../configs/app_colors.dart';
 
 class ShimmerImage extends StatelessWidget {
   final String imageUrl;

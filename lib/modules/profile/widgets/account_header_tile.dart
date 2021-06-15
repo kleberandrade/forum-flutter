@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:forum_manha/core/configs/app_colors.dart';
-import 'package:forum_manha/core/configs/app_text_styles.dart';
-import 'package:forum_manha/core/helpers/string_helper.dart';
-import 'package:forum_manha/core/widgets/images/circle_avatar_network.dart';
+
+import '../../../core/configs/app_colors.dart';
+import '../../../core/configs/app_text_styles.dart';
+import '../../../core/helpers/string_helper.dart';
+import '../../../core/widgets/images/circle_avatar_network.dart';
 
 class ProfileHeaderTile extends StatelessWidget {
   final String name;

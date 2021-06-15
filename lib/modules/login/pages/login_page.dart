@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:forum_manha/core/helpers/snackbar_helper.dart';
-import 'package:forum_manha/core/widgets/appbars/simple_appbar.dart';
-import 'package:forum_manha/core/widgets/buttons/primary_button.dart';
-import 'package:forum_manha/core/widgets/buttons/secondary_button.dart';
-import 'package:forum_manha/core/widgets/dialogs/loading_dialog.dart';
-import 'package:forum_manha/core/widgets/forms/email_input_field.dart';
-import 'package:forum_manha/core/widgets/forms/form_scaffold.dart';
-import 'package:forum_manha/core/widgets/forms/password_input_field.dart';
-import 'package:forum_manha/modules/login/controllers/login_controller.dart';
+import 'package:forum_manha/core/widgets/buttons/align_text_button.dart';
+
+import '../../../core/helpers/snackbar_helper.dart';
+import '../../../core/widgets/appbars/simple_appbar.dart';
+import '../../../core/widgets/buttons/primary_button.dart';
+import '../../../core/widgets/buttons/secondary_button.dart';
+import '../../../core/widgets/dialogs/loading_dialog.dart';
+import '../../../core/widgets/forms/email_input_field.dart';
+import '../../../core/widgets/forms/form_scaffold.dart';
+import '../../../core/widgets/forms/password_input_field.dart';
+import '../controllers/login_controller.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -33,6 +35,11 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
           label: 'Senha',
           initialValue: controller.password,
           onSaved: controller.setPassword,
+        ),
+        AlignTextButton(
+          label: 'Esqueceu a senha?',
+          onPressed: () => Modular.to.pushNamed('/reset'),
+          alignment: Alignment.centerRight,
         ),
         PrimaryButton(label: 'Entrar', onPressed: _onLogin),
         SecondaryButton(label: 'Registrar', onPressed: _onRegister),

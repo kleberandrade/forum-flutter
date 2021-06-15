@@ -1,8 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:forum_manha/modules/login/controllers/login_controller.dart';
-import 'package:forum_manha/modules/login/repositories/login_repository.dart';
 
+import 'controllers/login_controller.dart';
 import 'pages/login_page.dart';
+import 'repositories/login_repository.dart';
 
 class LoginModule extends Module {
   @override

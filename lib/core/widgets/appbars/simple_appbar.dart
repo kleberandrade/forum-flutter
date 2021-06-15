@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:forum_manha/core/configs/app_colors.dart';
+
+import '../../configs/app_colors.dart';
 
 class SimpleAppBar extends StatefulWidget with PreferredSizeWidget {
   final String title;

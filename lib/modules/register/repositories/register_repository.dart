@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:forum_manha/core/configs/app_errors.dart';
-import 'package:forum_manha/modules/register/models/user_model.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
+
+import '../../../core/configs/app_errors.dart';
+import '../models/user_model.dart';
 
 class RegisterRepository {
   Future<Either<Failure, bool>> register(UserModel user) async {

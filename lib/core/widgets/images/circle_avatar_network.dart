@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:forum_manha/core/configs/app_colors.dart';
 
+import '../../configs/app_colors.dart';
 import 'shimmer_image.dart';
 
 class CircleAvatarNetwork extends StatelessWidget {

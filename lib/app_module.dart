@@ -1,9 +1,9 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:forum_manha/modules/reset/reset_module.dart';
 
 import 'modules/home/home_module.dart';
 import 'modules/login/login_module.dart';
 import 'modules/register/register_module.dart';
+import 'modules/reset/reset_module.dart';
 
 class AppModule extends Module {
   @override

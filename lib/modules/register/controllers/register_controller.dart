@@ -1,8 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:forum_manha/core/configs/app_errors.dart';
-import 'package:forum_manha/modules/register/models/user_model.dart';
-import 'package:forum_manha/modules/register/repositories/register_repository.dart';
 import 'package:mobx/mobx.dart';
+
+import '../../../core/configs/app_errors.dart';
+import '../models/user_model.dart';
+import '../repositories/register_repository.dart';
+
 part 'register_controller.g.dart';
 
 class RegisterController = _RegisterControllerBase with _$RegisterController;

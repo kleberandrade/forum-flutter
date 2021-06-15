@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:forum_manha/modules/reset/pages/reset_page.dart';
 
 import 'controllers/reset_controller.dart';
+import 'pages/reset_page.dart';
 import 'repositories/reset_repository.dart';
 
 class ResetModule extends Module {

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:forum_manha/core/configs/app_colors.dart';
-import 'package:forum_manha/core/configs/app_errors.dart';
-import 'package:forum_manha/core/helpers/snackbar_helper.dart';
-import 'package:forum_manha/core/widgets/dialogs/loading_dialog.dart';
-import 'package:forum_manha/core/widgets/dialogs/logout_dialog.dart';
-import 'package:forum_manha/core/widgets/tiles/action_tile.dart';
-import 'package:forum_manha/modules/profile/controllers/profile_controller.dart';
-import 'package:forum_manha/modules/profile/widgets/account_header_tile.dart';
+
+import '../../../core/configs/app_colors.dart';
+import '../../../core/configs/app_errors.dart';
+import '../../../core/helpers/snackbar_helper.dart';
+import '../../../core/widgets/dialogs/loading_dialog.dart';
+import '../../../core/widgets/dialogs/logout_dialog.dart';
+import '../../../core/widgets/tiles/action_tile.dart';
+import '../controllers/profile_controller.dart';
+import '../widgets/account_header_tile.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -16,6 +17,12 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
+  @override
+  void initState() {
+    super.initState();
+    controller.getCurrentUserData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +34,7 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
               return ProfileHeaderTile(
                 name: controller.name,
                 email: controller.email,
-                pictureUrl: controller.pictureUrl,
+                pictureUrl: controller.avatar,
               );
             }),
             const Divider(color: AppColors.white),

@@ -1,5 +1,7 @@
-import 'package:forum_manha/modules/profile/repositories/profile_repository.dart';
 import 'package:mobx/mobx.dart';
+
+import '../repositories/profile_repository.dart';
+
 part 'profile_controller.g.dart';
 
 class ProfileController = _ProfileControllerBase with _$ProfileController;
@@ -10,13 +12,23 @@ abstract class _ProfileControllerBase with Store {
   _ProfileControllerBase(this._repository);
 
   @observable
-  String name = 'Kleber de Oliveira Andrade';
+  String name = '';
 
   @observable
-  String email = 'pdjkleber@gmail.com';
+  String email = '';
 
   @observable
-  String pictureUrl = '';
+  String avatar = '';
+
+  @action
+  Future<void> getCurrentUserData() async {
+    final result = await _repository.getCurrentUserData();
+    result.fold((_) => null, (user) {
+      name = user.name;
+      email = user.email;
+      avatar = user.avatar;
+    });
+  }
 
   @action
   Future logout() async {

@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:forum_manha/core/configs/app_errors.dart';
-import 'package:forum_manha/modules/posts/models/comment_model.dart';
-import 'package:forum_manha/modules/posts/models/post_model.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
+
+import '../../../core/configs/app_errors.dart';
+import '../models/comment_model.dart';
+import '../models/post_model.dart';
 
 class PostsRepository {
   Future<Either<Failure, bool>> createPost(PostModel post) async {

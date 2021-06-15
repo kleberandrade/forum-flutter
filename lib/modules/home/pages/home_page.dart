@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:forum_manha/modules/home/controllers/home_controller.dart';
+
+import '../controllers/home_controller.dart';
 
 class HomePage extends StatefulWidget {
   @override

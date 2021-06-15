@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:forum_manha/core/configs/app_errors.dart';
-import 'package:forum_manha/modules/reset/repositories/reset_repository.dart';
 import 'package:mobx/mobx.dart';
+
+import '../../../core/configs/app_errors.dart';
+import '../repositories/reset_repository.dart';
 
 part 'reset_controller.g.dart';
 

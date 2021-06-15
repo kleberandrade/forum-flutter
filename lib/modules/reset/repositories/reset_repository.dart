@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:forum_manha/core/configs/app_errors.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
+
+import '../../../core/configs/app_errors.dart';
 
 class ResetRepository {
   Future<Either<Failure, bool>> passwordReset(String email) async {

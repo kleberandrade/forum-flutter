@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:forum_manha/core/configs/app_errors.dart';
-import 'package:forum_manha/modules/login/models/credential_model.dart';
-import 'package:forum_manha/modules/login/models/user_model.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
+
+import '../../../core/configs/app_errors.dart';
+import '../models/credential_model.dart';
+import '../models/user_model.dart';
 
 class LoginRepository {
   Future<Either<Failure, UserModel>> login(CredentialModel credential) async {

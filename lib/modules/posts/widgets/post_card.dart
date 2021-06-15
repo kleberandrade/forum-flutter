@@ -1,43 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:forum_manha/core/helpers/date_helper.dart';
-import 'package:forum_manha/core/helpers/string_helper.dart';
-import 'package:forum_manha/core/widgets/images/circle_avatar_network.dart';
-import 'package:forum_manha/modules/posts/models/post_model.dart';
+import '../../../core/helpers/date_helper.dart';
+import '../../../core/helpers/string_helper.dart';
+import '../../../core/widgets/images/circle_avatar_network.dart';
+import '../models/post_model.dart';
 
 class PostCard extends StatelessWidget {
   final PostModel post;
+  final Function(PostModel) onPressed;
 
   const PostCard({
     Key? key,
     required this.post,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Container(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _buildHeader(),
-            Text(post.title),
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 20.0),
-              child: Text(post.description),
-            ),
-            const Divider(height: 0.0),
-            Container(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Row(
-                children: [
-                  _buildLikes(),
-                  _buildComments(),
-                  _buildViews(),
-                ],
+    return InkWell(
+      onTap: () => onPressed(post),
+      child: Card(
+        child: Container(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              _buildHeader(),
+              Text(post.title),
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                child: Text(post.description),
               ),
-            ),
-          ],
+              const Divider(height: 0.0),
+              Container(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Row(
+                  children: [
+                    _buildLikes(),
+                    _buildComments(),
+                    _buildViews(),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

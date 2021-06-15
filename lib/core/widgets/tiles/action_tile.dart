@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:forum_manha/core/configs/app_colors.dart';
-import 'package:forum_manha/core/configs/app_text_styles.dart';
+
+import '../../configs/app_colors.dart';
+import '../../configs/app_text_styles.dart';
 
 enum ActionTileBrightness { light, dart }
 

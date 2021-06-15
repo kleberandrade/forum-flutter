@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:forum_manha/core/configs/app_errors.dart';
-import 'package:forum_manha/core/helpers/snackbar_helper.dart';
-import 'package:forum_manha/core/widgets/appbars/simple_appbar.dart';
-import 'package:forum_manha/core/widgets/buttons/primary_button.dart';
-import 'package:forum_manha/core/widgets/dialogs/loading_dialog.dart';
-import 'package:forum_manha/core/widgets/forms/form_scaffold.dart';
-import 'package:forum_manha/core/widgets/forms/text_area_input_field.dart';
-import 'package:forum_manha/core/widgets/forms/text_input_field.dart';
-import 'package:forum_manha/modules/posts/controllers/posts_editor_controller.dart';
+
+import '../../../core/configs/app_errors.dart';
+import '../../../core/helpers/snackbar_helper.dart';
+import '../../../core/widgets/appbars/simple_appbar.dart';
+import '../../../core/widgets/buttons/primary_button.dart';
+import '../../../core/widgets/dialogs/loading_dialog.dart';
+import '../../../core/widgets/forms/form_scaffold.dart';
+import '../../../core/widgets/forms/text_area_input_field.dart';
+import '../../../core/widgets/forms/text_input_field.dart';
+import '../controllers/posts_editor_controller.dart';
 
 class PostsEditorPage extends StatefulWidget {
   const PostsEditorPage({Key? key}) : super(key: key);

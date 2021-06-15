@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:forum_manha/core/widgets/appbars/simple_appbar.dart';
-import 'package:forum_manha/modules/posts/controllers/posts_controller.dart';
-import 'package:forum_manha/modules/posts/widgets/post_card.dart';
+import 'package:forum_manha/modules/posts/models/post_model.dart';
+
+import '../../../core/widgets/appbars/simple_appbar.dart';
+import '../controllers/posts_controller.dart';
+import '../widgets/post_card.dart';
 
 class PostsPage extends StatefulWidget {
   @override
@@ -48,6 +50,13 @@ class _PostsPageState extends ModularState<PostsPage, PostsController> {
 
   Widget _buildPostCard(BuildContext context, int index) {
     final post = controller.postList[index];
-    return PostCard(post: post);
+    return PostCard(
+      post: post,
+      onPressed: _onOpenPost,
+    );
+  }
+
+  void _onOpenPost(PostModel post) {
+    Modular.to.pushNamed('/home/posts/detail', arguments: post);
   }
 }

@@ -1,9 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:forum_manha/core/configs/app_errors.dart';
-import 'package:forum_manha/modules/login/models/credential_model.dart';
-import 'package:forum_manha/modules/login/models/user_model.dart';
-import 'package:forum_manha/modules/login/repositories/login_repository.dart';
 import 'package:mobx/mobx.dart';
+
+import '../../../core/configs/app_errors.dart';
+import '../models/credential_model.dart';
+import '../models/user_model.dart';
+import '../repositories/login_repository.dart';
 
 part 'login_controller.g.dart';
 

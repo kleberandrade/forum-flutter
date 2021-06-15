@@ -39,19 +39,28 @@ mixin _$ProfileController on _ProfileControllerBase, Store {
     });
   }
 
-  final _$pictureUrlAtom = Atom(name: '_ProfileControllerBase.pictureUrl');
+  final _$avatarAtom = Atom(name: '_ProfileControllerBase.avatar');
 
   @override
-  String get pictureUrl {
-    _$pictureUrlAtom.reportRead();
-    return super.pictureUrl;
+  String get avatar {
+    _$avatarAtom.reportRead();
+    return super.avatar;
   }
 
   @override
-  set pictureUrl(String value) {
-    _$pictureUrlAtom.reportWrite(value, super.pictureUrl, () {
-      super.pictureUrl = value;
+  set avatar(String value) {
+    _$avatarAtom.reportWrite(value, super.avatar, () {
+      super.avatar = value;
     });
+  }
+
+  final _$getCurrentUserDataAsyncAction =
+      AsyncAction('_ProfileControllerBase.getCurrentUserData');
+
+  @override
+  Future<void> getCurrentUserData() {
+    return _$getCurrentUserDataAsyncAction
+        .run(() => super.getCurrentUserData());
   }
 
   final _$logoutAsyncAction = AsyncAction('_ProfileControllerBase.logout');
@@ -66,7 +75,7 @@ mixin _$ProfileController on _ProfileControllerBase, Store {
     return '''
 name: ${name},
 email: ${email},
-pictureUrl: ${pictureUrl}
+avatar: ${avatar}
     ''';
   }
 }

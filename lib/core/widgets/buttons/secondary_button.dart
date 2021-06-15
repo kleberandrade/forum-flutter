@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../configs/app_colors.dart';
 
 class SecondaryButton extends StatelessWidget {
@@ -14,23 +15,15 @@ class SecondaryButton extends StatelessWidget {
     required this.onPressed,
     this.height = 48.0,
     this.radius = 50.0,
-    this.padding = const EdgeInsets.only(top: 40.0),
+    this.padding = const EdgeInsets.only(top: 20.0),
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: padding,
-      child: ElevatedButton(
+      child: TextButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          minimumSize: Size.fromHeight(height),
-          primary: AppColors.scaffoldColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(radius)),
-            side: const BorderSide(color: AppColors.primaryColor),
-          ),
-        ),
         child: Text(
           label.toUpperCase(),
           style: const TextStyle(

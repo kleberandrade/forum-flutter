@@ -1,6 +1,8 @@
-import 'package:forum_manha/modules/posts/models/post_model.dart';
-import 'package:forum_manha/modules/posts/repositories/posts_repository.dart';
 import 'package:mobx/mobx.dart';
+
+import '../models/post_model.dart';
+import '../repositories/posts_repository.dart';
+
 part 'posts_controller.g.dart';
 
 class PostsController = _PostsControllerBase with _$PostsController;
